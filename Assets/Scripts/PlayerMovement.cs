@@ -4,11 +4,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-
-    [HideInInspector] public Vector2 movement;
+    private Vector2 movement;
     [SerializeField] private PlayerShift playerShift;
-    public float carSpeed = 10f;
-    public float airplaneSpeed = 15f;
+    [SerializeField] private PlayerGravity playerGravity;
+    [SerializeField] private float carSpeed;
+    [SerializeField] private float airplaneSpeed;
     private bool haltMovement = false;
 
 
@@ -20,9 +20,10 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
         movement.y = Input.GetAxisRaw("Vertical");
-            
+        if (playerGravity.IsFalling()) haltMovement = true; else haltMovement = false;
     }
 
     private void FixedUpdate()
