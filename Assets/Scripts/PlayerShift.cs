@@ -37,4 +37,6 @@ public class PlayerShift : MonoBehaviour
         isCar = false;
         Debug.Log("Agora sou um aviao");
     }
+
+    public bool IsCar() { return isCar; }
 }
