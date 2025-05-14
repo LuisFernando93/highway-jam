@@ -30,6 +30,12 @@ public class PlayerGravity : MonoBehaviour
                 cellingCollider.enabled = true;
                 isFalling = false;
             }
+        } 
+        else if (!playerShift.IsCar())
+        {
+            rb.gravityScale = 0f;
+            rb.linearVelocity = Vector2.zero;
+            isFalling = false;
         }
     }
 
