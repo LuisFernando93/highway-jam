@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  spawnTime: 5
 --- !u!61 &1272755245191309625
 BoxCollider2D:
   m_ObjectHideFlags: 0
