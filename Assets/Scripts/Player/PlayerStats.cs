@@ -4,8 +4,8 @@ public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
-    [SerializeField] private int gas;
-    [SerializeField] private int maxGas;
+    [SerializeField] private float gas;
+    [SerializeField] private float maxGas;
     private int score;
 
     private void Start()
@@ -23,7 +23,8 @@ public class PlayerStats : MonoBehaviour
     }
 
     public int GetHealth() { return health; }
-    public int GetGas() { return gas; }
+    public float GetGas() { return gas; }
+    public float GetMaxGas() { return maxGas; }
     public int GetScore() { return score; }
 
     public void Heal(int heal)
