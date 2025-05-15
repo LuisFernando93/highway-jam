@@ -33,11 +33,31 @@ public class SpawnController : MonoBehaviour
     private void Spawn()
     {
         GameObject spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        ItemType itemType = spawnPoint.GetComponent<SpawnPoint>().itemSpawned();
-        GameObject item = itemPrefabs.Find(item => item.GetComponent<Item>().GetItemType() == itemType);
+        GameObject obj = null;
+        if (counter >= obstaclesCount)
+        {
+            ItemType itemType = spawnPoint.GetComponent<SpawnPoint>().itemSpawned();
+            if (itemType != ItemType.Null)
+            {
+                obj = itemPrefabs.Find(item => item.GetComponent<Item>().GetItemType() == itemType);
+            }
+            counter = 0;
+        } 
+        else
+        {
+            ObstacleType obstacleType = spawnPoint.GetComponent<SpawnPoint>().obstacleSpawned();
+            if (obstacleType != ObstacleType.Null)
+            {
+                obj = obstaclesPrefabs.Find(obstacle => obstacle.GetComponent<Obstacle>().GetObstacleType() == obstacleType);
+            }
+            counter++;
+        }
 
-        GameObject spawnedItem = Instantiate(item, spawnPoint.transform.position, Quaternion.identity);
-        Rigidbody2D objectRB = spawnedItem.GetComponent<Rigidbody2D>();
-        objectRB.linearVelocity = Vector2.left * speed;
+        if (obj != null) 
+        {
+            GameObject spawnedObject = Instantiate(obj, spawnPoint.transform.position, Quaternion.identity);
+            Rigidbody2D objectRB = spawnedObject.GetComponent<Rigidbody2D>();
+            objectRB.linearVelocity = Vector2.left * speed;
+        }
     }
 }

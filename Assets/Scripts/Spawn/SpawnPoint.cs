@@ -7,7 +7,7 @@ public class SpawnPoint : MonoBehaviour
 
     public ItemType itemSpawned()
     {
-        if (availableItems != null)
+        if (availableItems != null & availableItems.Length != 0)
         {
             int rngItem = Random.Range(0, availableItems.Length);
             return availableItems[rngItem];
@@ -20,7 +20,7 @@ public class SpawnPoint : MonoBehaviour
 
     public ObstacleType obstacleSpawned()
     { 
-        if (availableObstacles != null)
+        if (availableObstacles != null & availableObstacles.Length != 0)
         {
             int rngObstacle = Random.Range(0,availableObstacles.Length);
             return availableObstacles[rngObstacle];
