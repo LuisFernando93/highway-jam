@@ -7,11 +7,11 @@ public class StatsUI : MonoBehaviour
     [SerializeField] private GameObject healthDisplay;
     [SerializeField] private GameObject scoreDisplay;
     [SerializeField] private Image gasFill;
-    [SerializeField] private float gasChangeSpeed = 10f;
+    [SerializeField] private float gasChangeSpeed = 1f;
 
     [SerializeField] private float gasFillAmount = 1f;
 
-    private GameObject player;
+    protected GameObject player;
 
     private void Start()
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
+    private GameObject player;
     private Collider2D playerCollider;
     private Collider2D itemCollider;
     [SerializeField] private int spawnTime;

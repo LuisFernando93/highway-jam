@@ -26,6 +26,18 @@ public class PlayerStats : MonoBehaviour
         
     }
 
+    private void LateUpdate()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsTag("damage"))
+        {
+            canTakeDamage = false;
+        }
+        else
+        {
+            canTakeDamage = true;
+        }
+    }
+
     public int GetHealth() { return health; }
     public float GetGas() { return gas; }
     public float GetMaxGas() { return maxGas; }
@@ -50,23 +62,15 @@ public class PlayerStats : MonoBehaviour
         
     }
 
-    private void LateUpdate()
-    {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsTag("damage"))
-        {
-            canTakeDamage = false;
-        }
-        else
-        {
-            canTakeDamage = true;
-        }
-    }
-
-
 
     public void FillGas(int fill)
     {
         gas += fill;
         if (gas > maxGas) gas = maxGas;
+    }
+
+    public void AddScore(int points)
+    {
+        score += points;
     }
 }

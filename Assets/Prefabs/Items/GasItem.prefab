@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 5
   type: 2
-  gas: 50
+  gas: 20
 --- !u!61 &2614309558562794009
 BoxCollider2D:
   m_ObjectHideFlags: 0
