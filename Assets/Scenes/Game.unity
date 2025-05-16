@@ -119,52 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &58780474
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 58780476}
-  - component: {fileID: 58780475}
-  m_Layer: 0
-  m_Name: ScoreMenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &58780475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58780474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e6542e758014342bacede38087384c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreMenuContainer: {fileID: 1023938998}
-  finalScore: {fileID: 352198413}
---- !u!4 &58780476
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58780474}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 435.15207, y: 178.94511, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &80488087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1272,7 +1226,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 58780475}
+      - m_Target: {fileID: 1315809557}
         m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
@@ -1678,7 +1632,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 58780475}
+      - m_Target: {fileID: 1315809557}
         m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
@@ -2041,9 +1995,9 @@ MonoBehaviour:
   maxHealth: 5
   gas: 100
   maxGas: 100
-  damageAnimation: {fileID: 0}
   scoreIncrement: 0.1
-  gasUsageRate: 0.2
+  gasUsageRate: 0.1
+  gasFillUpRate: 0.3
 --- !u!95 &667478050
 Animator:
   serializedVersion: 7
@@ -3011,7 +2965,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 58780475}
+      - m_Target: {fileID: 1315809557}
         m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
         m_MethodName: RetryButton
         m_Mode: 1
@@ -3083,6 +3037,7 @@ GameObject:
   - component: {fileID: 1315809554}
   - component: {fileID: 1315809553}
   - component: {fileID: 1315809556}
+  - component: {fileID: 1315809557}
   - component: {fileID: 1315809552}
   m_Layer: 5
   m_Name: Canvas
@@ -3197,6 +3152,20 @@ MonoBehaviour:
   gasFill: {fileID: 1967609374}
   gasChangeSpeed: 10
   gasFillAmount: 1
+--- !u!114 &1315809557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315809551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e6542e758014342bacede38087384c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreMenuContainer: {fileID: 1023938998}
+  finalScore: {fileID: 352198413}
 --- !u!1 &1576929606
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,4 +3920,3 @@ SceneRoots:
   - {fileID: 1315809555}
   - {fileID: 1970554008}
   - {fileID: 1018264949}
-  - {fileID: 58780476}

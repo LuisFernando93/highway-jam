@@ -7,14 +7,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private float gas;
     [SerializeField] private float maxGas;
-    [SerializeField] private AnimationClip damageAnimation;
     [SerializeField] private float scoreIncrement = 0.1f;
     [SerializeField] private float gasUsageRate = 0.5f;
+    [SerializeField] private float gasFillUpRate = 0.5f;
     private int score;
     private bool canTakeDamage;
     private Animator animator;
     private float timerScore = 0f;
-    private float timerGas = 0f;
+    private float timerGasFill = 0f;
+    private float timerGasUse = 0f;
 
     private void Start()
     {
@@ -91,10 +92,25 @@ public class PlayerStats : MonoBehaviour
     }
     public void useGas()
     {
-        timerGas += Time.deltaTime;
-        if (timerGas >= gasUsageRate)
+        if (playerShift.IsCar())
         {
-            if (playerShift.IsCar()) gas++; else gas--;
+            timerGasFill += Time.deltaTime;
+            if (timerGasFill >= gasFillUpRate)
+            {
+                gas++;
+                timerGasFill = 0f;
+            }
+        } 
+        else
+        {
+            timerGasUse += Time.deltaTime;
+            if (timerGasUse >= gasUsageRate)
+            {
+                gas--;
+                timerGasUse = 0f;
+            }
         }
+        if (gas > maxGas) gas = maxGas;
+        if (gas  < 0) gas = 0;
     }
 }
