@@ -1322,7 +1322,7 @@ MonoBehaviour:
   maxGas: 100
   damageAnimation: {fileID: 0}
   scoreIncrement: 0.1
-  gasUsageRate: 0.1
+  gasUsageRate: 0.2
 --- !u!95 &667478050
 Animator:
   serializedVersion: 7

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerShift : MonoBehaviour
 {
     [SerializeField] private Collider2D cellingCollider;
+    [SerializeField] private PlayerStats stats;
     private bool isCar = true;
     private Rigidbody2D rb;
 
@@ -25,6 +26,11 @@ public class PlayerShift : MonoBehaviour
             {
                 ShiftToCar();
             }
+        }
+
+        if (stats.GetGas() <= 0 & !isCar)
+        {
+            ShiftToCar();
         }
     }
 
