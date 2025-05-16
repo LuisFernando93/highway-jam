@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
         switch (type)
         {
             case "master":
-                _mixer.GetFloat("MasterVolume", out float volumeMaster);
+                _mixer.GetFloat("VolumeMaster", out float volumeMaster);
                 volumeMaster = Mathf.Pow(10f, volumeMaster / 20);
                 return volumeMaster;
             case "music":
