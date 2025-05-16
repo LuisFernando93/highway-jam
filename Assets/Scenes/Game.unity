@@ -657,7 +657,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1315,11 +1315,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf7481f91f7bb041841fff075968e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerShift: {fileID: 667478044}
   health: 5
   maxHealth: 5
   gas: 100
   maxGas: 100
   damageAnimation: {fileID: 0}
+  scoreIncrement: 0.1
+  gasUsageRate: 0.1
 --- !u!95 &667478050
 Animator:
   serializedVersion: 7

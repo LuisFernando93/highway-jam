@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField] PlayerShift playerShift;
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
     [SerializeField] private float gas;
     [SerializeField] private float maxGas;
     [SerializeField] private AnimationClip damageAnimation;
+    [SerializeField] private float scoreIncrement = 0.1f;
+    [SerializeField] private float gasUsageRate = 0.5f;
     private int score;
     private bool canTakeDamage;
     private Animator animator;
+    private float timerScore = 0f;
+    private float timerGas = 0f;
 
     private void Start()
     {
@@ -23,7 +28,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        
+        timeScore();
+        useGas();
     }
 
     private void LateUpdate()
@@ -72,5 +78,23 @@ public class PlayerStats : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
+    }
+
+    public void timeScore()
+    {
+        timerScore += Time.deltaTime;
+        if (timerScore >= scoreIncrement)
+        {
+            score++;
+            timerScore = 0f;
+        }
+    }
+    public void useGas()
+    {
+        timerGas += Time.deltaTime;
+        if (timerGas >= gasUsageRate)
+        {
+            if (playerShift.IsCar()) gas++; else gas--;
+        }
     }
 }
