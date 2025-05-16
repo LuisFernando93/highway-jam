@@ -6,7 +6,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private float gas;
     [SerializeField] private float maxGas;
+    [SerializeField] private AnimationClip damageAnimation;
     private int score;
+    private bool canTakeDamage;
+    private Animator animator;
 
     private void Start()
     {
@@ -15,6 +18,7 @@ public class PlayerStats : MonoBehaviour
         if (gas < 0) gas = 0;
         if (gas > maxGas) gas = maxGas;
         score = 0;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -35,9 +39,30 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health < 0) health = 0;
+        if(canTakeDamage)
+        {
+            health -= damage;
+            if (health < 0) health = 0;
+            canTakeDamage = false;
+
+            animator.Play("PlayerDamage");
+        }
+        
     }
+
+    private void LateUpdate()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsTag("damage"))
+        {
+            canTakeDamage = false;
+        }
+        else
+        {
+            canTakeDamage = true;
+        }
+    }
+
+
 
     public void FillGas(int fill)
     {
