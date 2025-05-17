@@ -37,7 +37,7 @@ public class ScoreMenu : MonoBehaviour
 
     public void MainMenuButton()
     {
-        //SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void ExitButton()
