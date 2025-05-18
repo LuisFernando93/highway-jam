@@ -4464,7 +4464,7 @@ MonoBehaviour:
   _musicVolumeSlider: {fileID: 1898992633}
   _SFXVolumeSlider: {fileID: 721561749}
   _buttonClick: {fileID: 8300000, guid: 4d1c64014a50755489013a016a770adb, type: 3}
-  _menuOST: {fileID: 0}
+  _menuOST: {fileID: 8300000, guid: b834d164112b8774db35c1226b12ee5a, type: 3}
 --- !u!1 &1916555633
 GameObject:
   m_ObjectHideFlags: 0

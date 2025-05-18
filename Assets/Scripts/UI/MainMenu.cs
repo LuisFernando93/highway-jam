@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //SoundManager.Instance.PlaySingleMusic(_menuOST);
+        SoundManager.Instance.PlaySingleMusic(_menuOST);
         _masterVolumeSlider.value = SoundManager.Instance.GetVolumeFromMixer("master");
         _musicVolumeSlider.value = SoundManager.Instance.GetVolumeFromMixer("music");
         _SFXVolumeSlider.value = SoundManager.Instance.GetVolumeFromMixer("SFX");

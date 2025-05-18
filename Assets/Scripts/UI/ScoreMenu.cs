@@ -8,12 +8,14 @@ public class ScoreMenu : MonoBehaviour
     [SerializeField] private GameObject scoreMenuContainer;
     [SerializeField] private GameObject finalScore;
     [SerializeField] private AudioClip crashSFX, clickSFX;
+    [SerializeField] private AudioClip gameMusic;
     private bool gameOver = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Time.timeScale = 1f;
         stats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        SoundManager.Instance.PlaySingleMusic(gameMusic);
     }
 
     // Update is called once per frame

@@ -3514,6 +3514,7 @@ MonoBehaviour:
   finalScore: {fileID: 352198413}
   crashSFX: {fileID: 8300000, guid: 979ae66b339679746889378051e613d8, type: 3}
   clickSFX: {fileID: 8300000, guid: 4d1c64014a50755489013a016a770adb, type: 3}
+  gameMusic: {fileID: 8300000, guid: 641ca82bdff2b13489b82788b87c02ae, type: 3}
 --- !u!1 &1334829874
 GameObject:
   m_ObjectHideFlags: 0
