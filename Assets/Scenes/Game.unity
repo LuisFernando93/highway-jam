@@ -2714,7 +2714,7 @@ MonoBehaviour:
   - {fileID: 1042367274}
   - {fileID: 1159193795}
   - {fileID: 1781350765}
-  speed: 6
+  speed: 10
   spawnTime: 0.4
   obstaclesCount: 2
   itemPrefabs:
@@ -3804,7 +3804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e10c4622b928b043852833df7dd3cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 8
   scrollLeft: 1
 --- !u!1 &1846272356
 GameObject:
