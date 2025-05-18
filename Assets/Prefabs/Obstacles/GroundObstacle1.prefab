@@ -105,7 +105,6 @@ MonoBehaviour:
   type: 2
   spawnTime: 5
   damage: 1
-  hit: {fileID: 8300000, guid: 8dcbbacb5783b264395ab36a14a4a541, type: 3}
 --- !u!50 &6016319156242343345
 Rigidbody2D:
   serializedVersion: 5

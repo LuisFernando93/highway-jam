@@ -18,7 +18,7 @@ public class PlayerShift : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) & stats.GetHealth() > 0)
         {
             if (isCar)
             {
