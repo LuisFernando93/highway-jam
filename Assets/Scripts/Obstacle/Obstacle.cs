@@ -21,6 +21,7 @@ public class Obstacle : MonoBehaviour
         if (obstacleCollider.IsTouching(player.GetComponent<Collider2D>()))
         {
             Debug.Log("Bateu!");
+            
             player.GetComponent<PlayerStats>().TakeDamage(damage);
         }
         timer += Time.deltaTime;

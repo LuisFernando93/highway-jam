@@ -5,6 +5,7 @@ public class PlayerShift : MonoBehaviour
     [SerializeField] private Collider2D cellingCollider;
     [SerializeField] private PlayerStats stats;
     [SerializeField] private Sprite carSprite, planeSprite;
+    [SerializeField] private AudioClip transformSFX;
     private bool isCar = true;
     private Rigidbody2D rb;
 
@@ -37,6 +38,7 @@ public class PlayerShift : MonoBehaviour
 
     private void ShiftToCar()
     {
+        SoundManager.Instance.PlaySFX(transformSFX);
         gameObject.GetComponent<SpriteRenderer>().sprite = carSprite;
         isCar = true;
         rb.gravityScale = 1f;
@@ -45,6 +47,7 @@ public class PlayerShift : MonoBehaviour
 
     private void ShiftToPlane()
     {
+        SoundManager.Instance.PlaySFX(transformSFX);
         gameObject.GetComponent<SpriteRenderer>().sprite = planeSprite;
         isCar = false;
         rb.gravityScale = 0f;

@@ -9,6 +9,7 @@ public abstract class Item : MonoBehaviour
     [SerializeField] private int spawnTime;
     private float timer;
     [SerializeField] private ItemType type = ItemType.Null;
+    [SerializeField] private AudioClip itemSFX;
 
 
     private void Start()
@@ -22,6 +23,7 @@ public abstract class Item : MonoBehaviour
     {
         if (itemCollider.IsTouching(playerCollider))
         {
+            SoundManager.Instance.PlaySFX(itemSFX);
             Effect();
             Destroy(this.gameObject);
         }

@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float scoreIncrement = 0.1f;
     [SerializeField] private float gasUsageRate = 0.5f;
     [SerializeField] private float gasFillUpRate = 0.5f;
+    [SerializeField] AudioClip hit;
     private int score;
     private bool canTakeDamage;
     private Animator animator;
@@ -60,6 +61,7 @@ public class PlayerStats : MonoBehaviour
     {
         if(canTakeDamage)
         {
+            SoundManager.Instance.PlaySFX(hit);
             health -= damage;
             if (health < 0) health = 0;
             canTakeDamage = false;

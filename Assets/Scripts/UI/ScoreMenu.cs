@@ -7,6 +7,8 @@ public class ScoreMenu : MonoBehaviour
     private PlayerStats stats;
     [SerializeField] private GameObject scoreMenuContainer;
     [SerializeField] private GameObject finalScore;
+    [SerializeField] private AudioClip crashSFX, clickSFX;
+    private bool gameOver = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,15 +19,18 @@ public class ScoreMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stats.GetHealth() <= 0)
+        if (stats.GetHealth() <= 0 & !gameOver)
         {
             ShowScore();
+            gameOver = true;
         }
     }
 
     private void ShowScore()
     {
         Time.timeScale = 0f;
+        SoundManager.Instance.StopMusic();
+        SoundManager.Instance.PlaySFX(crashSFX);
         finalScore.GetComponent<TextMeshProUGUI>().text = stats.GetScore().ToString();
         scoreMenuContainer.SetActive(true);
     }
@@ -43,5 +48,10 @@ public class ScoreMenu : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    public void PlayClickSFX()
+    {
+        SoundManager.Instance.PlaySFX(clickSFX);
     }
 }

@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 5
   type: 3
+  itemSFX: {fileID: 8300000, guid: 09fea55d9bad4464fb1cecec6b4bf1ef, type: 3}
   score: 50
 --- !u!50 &-4523106773117547280
 Rigidbody2D:

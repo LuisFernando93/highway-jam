@@ -104,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 5
   type: 1
+  itemSFX: {fileID: 8300000, guid: 54556b010158a40459244a4137375c62, type: 3}
   health: 1
 --- !u!61 &-7514261893722887396
 BoxCollider2D:

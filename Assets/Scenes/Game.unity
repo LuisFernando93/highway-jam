@@ -1530,6 +1530,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1315809557}
+        m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
+        m_MethodName: PlayClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &431574321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1982,6 +1994,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1315809557}
+        m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
+        m_MethodName: PlayClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &555638941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,6 +2183,7 @@ MonoBehaviour:
   stats: {fileID: 667478049}
   carSprite: {fileID: -1259408508766424310, guid: 945086234e8ca3b428dec22aae3534ea, type: 3}
   planeSprite: {fileID: -6251682230944352461, guid: 945086234e8ca3b428dec22aae3534ea, type: 3}
+  transformSFX: {fileID: 8300000, guid: 767b67fb0141a8f4aa539beec03cc4dc, type: 3}
 --- !u!114 &667478045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,6 +2308,7 @@ MonoBehaviour:
   scoreIncrement: 0.1
   gasUsageRate: 0.1
   gasFillUpRate: 0.3
+  hit: {fileID: 8300000, guid: 8dcbbacb5783b264395ab36a14a4a541, type: 3}
 --- !u!95 &667478050
 Animator:
   serializedVersion: 7
@@ -3667,6 +3693,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1315809557}
+        m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
+        m_MethodName: PlayClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1266460616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3889,6 +3927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreMenuContainer: {fileID: 1023938998}
   finalScore: {fileID: 352198413}
+  crashSFX: {fileID: 8300000, guid: 979ae66b339679746889378051e613d8, type: 3}
+  clickSFX: {fileID: 8300000, guid: 4d1c64014a50755489013a016a770adb, type: 3}
 --- !u!1 &1334829874
 GameObject:
   m_ObjectHideFlags: 0
